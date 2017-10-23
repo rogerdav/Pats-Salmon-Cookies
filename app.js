@@ -8,7 +8,7 @@ function getRandomIntInclusive(min, max) {
 
 
 
-var storenum1  = {
+var storeNum1  = {
   storename: '1st & Pike',
   minCust: 23,
   maxCust: 65,
@@ -17,10 +17,14 @@ var storenum1  = {
     return getRandomIntInclusive(this.minCust,this.maxCust);
   },
   aveHourlySales: function () {
-    return Math.ceil(this.hourlyCust() * this.aveSales);
+    var salesByHour = [];
+    for (var i = 0; i < 14; i++)  {
+      salesByHour.push(Math.ceil(this.hourlyCust() * this.aveSales));
+    }
+    return salesByHour;
   }
-};
 
+};
 var storenum2  = {
   storename: 'Seatac Airport',
   minCust: 3,
@@ -30,7 +34,11 @@ var storenum2  = {
     return getRandomIntInclusive(this.minCust,this.maxCust);
   },
   aveHourlySales: function () {
-    return Math.ceil(this.hourlyCust() * this.aveSales);
+    var salesByHour = [];
+    for (var i = 0; i < 14; i++  {
+      salesByHour.push(Math.ceil(this.hourlyCust() * this.aveSales));
+    }
+    return salesByHour;
   }
 };
 
@@ -43,7 +51,11 @@ var storenum3  = {
     return getRandomIntInclusive(this.minCust,this.maxCust);
   },
   aveHourlySales: function () {
-    return Math.ceil(this.hourlyCust() * this.aveSales);
+    var salesByHour = [];
+    for (var i = 0; i < 14; i++) {
+      salesByHour.push(Math.ceil(this.hourlyCust() * this.aveSales));
+    }
+    return salesByHour;
   }
 };
 
@@ -56,7 +68,11 @@ var storenum4  = {
     return getRandomIntInclusive(this.minCust,this.maxCust);
   },
   aveHourlySales: function () {
-    return Math.ceil(this.hourlyCust() * this.aveSales);
+    var salesByHour = [];
+    for (var i = 0; i < 14; i++) {
+      salesByHour.push(Math.ceil(this.hourlyCust() * this.aveSales));
+    }
+    return salesByHour;
   }
 };
 
@@ -69,6 +85,10 @@ var storenum5  = {
     return getRandomIntInclusive(this.minCust,this.maxCust);
   },
   aveHourlySales: function () {
-    return Math.ceil(this.hourlyCust() * this.aveSales);
+    var salesByHour = [];
+    for (var i = 0; i < 14; i++) {
+      salesByHour.push(Math.ceil(this.hourlyCust() * this.aveSales));
+    }
+    return salesByHour;
   }
 };
