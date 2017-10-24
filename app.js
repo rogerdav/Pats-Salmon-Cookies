@@ -121,16 +121,18 @@ function putListinDoc(storeLocation) {
   var ulelement = document.createElement('ul');
 
   var lines = '';
-  var totalCookies =0;
-'<li>' + hoursList[k] + '</li>'
+  var totalCookies = 0;
+  //'<li>' + hoursList[k] + '</li>';
   for ( var k = 0; k < hoursList.length; k++) {
     lines = lines + '<li>' + hoursList[k] + '</li>';
-    totalCookies = totalCookies + lines;
+    totalCookies = lines + dailyTotal;
   }
 
-  //for ( var m = 0; m < liArray.length; m++) {
-  //  ulelement.appendChild(liArray[m]);
-  //}
+
+  console.log(lines);
+  lines = lines + '<li>' + 'Total Daily Sales' + dailyTotal + '</li>';
+  console.log(lines);
+
 
 
   ulelement.innerHTML = lines;
