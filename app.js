@@ -94,33 +94,45 @@ var storeNum5  = {
 };
 
 //array with sales hours
-var openHours = ['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
-
+var openHours = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12am: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ','7pm: ','8pm: ',];
+// this populates the HTML document
+//
+//
 function putListinDoc(storeLocation) {
 //listhead creates a heading with store name for each store
   var listhead = document.createElement('div');
   listhead.innerHTML = '<p>' + storeLocation.storename + '</p>';
-  //document.body.appendChild(listhead);
-
+  //
   var hoursList = [];
+  var dailyTotal = 0;
   var x = storeLocation.aveHourlySales(); // creates array with hoursly sales
+  for ( var z = 0; z < x.length; z++) {
+    dailyTotal = dailyTotal + x[z];
+  }
   console.log(x);
+  console.log(dailyTotal);
+
   //creates array of 'hours ' + values
   for (var j = 0; j < openHours.length; j++) {
-    hoursList.push(openHours[j] + '  ' + x[j]);
+    hoursList.push(openHours[j] + '  ' + x[j] + ' cookies');
   }
   console.log(hoursList);
   // creates li elements for each open hour with sales data
   var ulelement = document.createElement('ul');
 
   var lines = '';
-
+  var totalCookies =0;
+'<li>' + hoursList[k] + '</li>'
   for ( var k = 0; k < hoursList.length; k++) {
     lines = lines + '<li>' + hoursList[k] + '</li>';
+    totalCookies = totalCookies + lines;
   }
+
   //for ( var m = 0; m < liArray.length; m++) {
   //  ulelement.appendChild(liArray[m]);
   //}
+
+
   ulelement.innerHTML = lines;
   listhead.appendChild(ulelement);
   document.body.appendChild(listhead);
