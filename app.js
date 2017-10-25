@@ -33,9 +33,14 @@ function populateRows(storeName) {
 
 
 var dave = document.getElementById('content');
+var tableheadrow = document.getElementById('headerrow');
 var storeForm = document.getElementById('store_data_input');
 var storesToUse = [];
-
+createHeading();
+console.log(dave);
+console.log(tableheadrow);
+console.log(storeForm);
+console.log(storesToUse);
 
 //generate stores - info taken from form and stored in array called storesToUse.
 function detailsFromForm(event) {
@@ -45,44 +50,47 @@ function detailsFromForm(event) {
   var maxCust = event.target.max_cust.value;
   var aveSales = event.target.ave_sales.value;
   var storenew = new Store(location,minCust,maxCust,aveSales);
-  populateRows(storenew);
+  populateRows(storenew);//add an array of hourly sales numbers to store object
   storesToUse.push(storenew);
-  createHeading();
-  for (var i = 0; i < storesToUse.length; i++ ) {
-    appendRowsToTable(storesToUse[i]);
-  }
+
+
+  appendRowsToTable(storenew);
+
   storeForm.reset();
 }
 
 
 storeForm.addEventListener('submit', detailsFromForm);
-console.log(storesToUse);
+
+
+
 // creates heading row
 function createHeading() {
   var salesHours = ['6am ','7am ','8am ','9am ','10am ','11am ','12pm ','1pm ','2pm ','3pm ','4pm ','5pm ','6pm ','7pm ','8pm ','Location Total'];
-  var headingRow = '<td class="store">' + 'Store Name' + '</td>';
+  var headingRow = '<td>' + 'Store Name' + '</td>';
   for ( var i = 0; i < salesHours.length; i++) {
     headingRow = headingRow + '<td>' + salesHours[i] + '</td>';
   }
   var headRowScreen;
   headRowScreen = document.createElement('tr');
   headRowScreen.innerHTML = headingRow;
-  dave.appendChild(headRowScreen);
+  tableheadrow.appendChild(headRowScreen);
 }
-console.log(createHeading());
+
 
 // appendRowsToTable takes the storemane and appends a table row for each store
 function appendRowsToTable(storeName) {
+
   var arraySum = 0;
-  var rowinfo = '<td class="store">' + storeName.storeName + '</td>';
+  var rowinfo = '<td>' + storeName.storeName + '</td>';
   for ( var i = 0; i < storeName.salesByHour.length; i++) {
     arraySum = arraySum + storeName.salesByHour[i];
     rowinfo = rowinfo + '<td>' + storeName.salesByHour[i] + '</td>';
   }
   rowinfo = rowinfo + '<td>' + arraySum + '</td>';
-  console.log('arraysum',arraySum);
-  console.log('rowinfo',rowinfo);
-  var newRow;
+  // console.log('arraysum',arraySum);
+  // console.log('rowinfo',rowinfo);
+  var newRow = '';
   newRow = document.createElement('tr');
   newRow.innerHTML = rowinfo;
   dave.appendChild(newRow);
@@ -102,7 +110,7 @@ for ( var k = 0; k < 15; k++) {
   }
   hourlyTotals.push(tempTotal);
 }
-console.log(hourlyTotals);
+//console.log(hourlyTotals);
 
 function appendTotalForTable() {
   var totalRow = '<td class="store">' + 'Totals: ' + '</td>';
