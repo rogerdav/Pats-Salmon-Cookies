@@ -35,8 +35,8 @@ var dave = document.getElementById('content');
 
 // creates heading row
 function createHeading() {
-  var salesHours = ['Store Name ','6am ','7am ','8am ','9am ','10am ','11am ','12pm ','1pm ','2pm ','3pm ','4pm ','5pm ','6pm ','7pm ','8pm ','Location Total'];
-  var headingRow = '';
+  var salesHours = ['6am ','7am ','8am ','9am ','10am ','11am ','12pm ','1pm ','2pm ','3pm ','4pm ','5pm ','6pm ','7pm ','8pm ','Location Total'];
+  var headingRow = '<td class="store">' + 'Store Name' + '</td>';
   for ( var i = 0; i < salesHours.length; i++) {
     headingRow = headingRow + '<td>' + salesHours[i] + '</td>';
   }
@@ -85,7 +85,7 @@ for ( var k = 0; k < 15; k++) {
 console.log(hourlyTotals);
 
 function appendTotalForTable() {
-  var totalRow = '<td>' + 'Totals: ' + '</td>';
+  var totalRow = '<td class="store">' + 'Totals: ' + '</td>';
   for ( var p = 0; p < hourlyTotals.length; p++) {
     totalRow = totalRow + '<td>' + hourlyTotals[p] + '</td>';
   }

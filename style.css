@@ -2,26 +2,31 @@
 div {
   padding-top: 30px;
   font-size: 30px;
-
 }
+
 body {
-  background: green;
+  background: #795548;
   color: black;
-
 }
-
+header img {
+  align: right;
+}
  p {
   padding-top: 30px;
   font-size: 16px;
 }
-
-
 h1 {
   font-family: serif;
   font-size: 40px;
   font-weight: bold;
+  padding-bottom: 20px;
+  margin: 25px auto;
 }
+table {
+  background: tan;
+  margin-top: 20px;
 
+}
  td {
    padding: 10px;
    width: 10px;
@@ -31,9 +36,11 @@ h1 {
 .shell thead {
   padding: 15px;
 }
-td:nth-child(1) {
-  padding: 0 100px;
-  font-size: 24px;
+.shell {
+  padding: 20px;
+  background-color: tan;
+  z-index: 9;
+
 }
 .store {
   font-size: 30px;
