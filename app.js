@@ -4,12 +4,14 @@ function getRandomIntInclusive(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 // stores object
 function Store(name,minCust,maxCust,aveSales) {
   this.storeName = name;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.aveSales = aveSales;
+
 }
 // method to create random customer per hour
 Store.prototype.hourlyCust = function() {
@@ -23,16 +25,38 @@ Store.prototype.aveHourlySales = function () {
   }
   return salesByHour;
 };
+//creates a function to populate and add to the object an array with sales by hour.
+function populateRows(storeName) {
+  storeName.salesByHour = storeName.aveHourlySales();
+}
 
-var firstAndPike = new Store('First and Pike', 23, 65, 6.3);
-var seaTacAirPort = new Store('Seatac Airport', 3, 24, 1.2);
-var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
-var capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
-var alki = new Store('Alki', 2, 16, 4.6);
-var storesToUse = [firstAndPike,seaTacAirPort,seattleCenter,capitolHill,alki];
+
 
 var dave = document.getElementById('content');
+var storeForm = document.getElementById('store_data_input');
+var storesToUse = [];
 
+
+//generate stores - info taken from form and stored in array called storesToUse.
+function detailsFromForm(event) {
+  event.preventDefault();
+  var location = event.target.store_name.value;
+  var minCust = event.target.min_cust.value;
+  var maxCust = event.target.max_cust.value;
+  var aveSales = event.target.ave_sales.value;
+  var storenew = new Store(location,minCust,maxCust,aveSales);
+  populateRows(storenew);
+  storesToUse.push(storenew);
+  createHeading();
+  for (var i = 0; i < storesToUse.length; i++ ) {
+    appendRowsToTable(storesToUse[i]);
+  }
+  storeForm.reset();
+}
+
+
+storeForm.addEventListener('submit', detailsFromForm);
+console.log(storesToUse);
 // creates heading row
 function createHeading() {
   var salesHours = ['6am ','7am ','8am ','9am ','10am ','11am ','12pm ','1pm ','2pm ','3pm ','4pm ','5pm ','6pm ','7pm ','8pm ','Location Total'];
@@ -47,10 +71,6 @@ function createHeading() {
 }
 console.log(createHeading());
 
-//creates a function to populate and add to the object an array with sales by hour.
-function populateRows(storeName) {
-  storeName.salesByHour = storeName.aveHourlySales();
-}
 // appendRowsToTable takes the storemane and appends a table row for each store
 function appendRowsToTable(storeName) {
   var arraySum = 0;
@@ -69,10 +89,10 @@ function appendRowsToTable(storeName) {
 }
 
 // runs through the list of stors and populates the table with that infomation
-for ( var j = 0; j < storesToUse.length; j++) {
-  populateRows(storesToUse[j]);
-  appendRowsToTable(storesToUse[j]);
-}
+// for ( var j = 0; j < storesToUse.length; j++) {
+//   populateRows(storesToUse[j]);
+//   appendRowsToTable(storesToUse[j]);
+// }
 // creates an array of hours totals for ALL stores in the list of stores to use
 var hourlyTotals = [];
 for ( var k = 0; k < 15; k++) {
@@ -94,4 +114,3 @@ function appendTotalForTable() {
   newTotalRow.innerHTML = totalRow;
   dave.appendChild(newTotalRow);
 }
-appendTotalForTable();
