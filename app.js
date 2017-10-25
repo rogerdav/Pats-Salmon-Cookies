@@ -11,10 +11,11 @@ function Store(name,minCust,maxCust,aveSales) {
   this.maxCust = maxCust;
   this.aveSales = aveSales;
 }
-
+// method to create random customer per hour
 Store.prototype.hourlyCust = function() {
   return getRandomIntInclusive(this.minCust,this.maxCust);
 };
+// creates metho to create array of hourly sales
 Store.prototype.aveHourlySales = function () {
   var salesByHour = [];
   for (var i = 0; i < 15; i++) {
@@ -46,14 +47,14 @@ function createHeading() {
 }
 console.log(createHeading());
 
-//creates a function to populate and add to the object an array with salesby hour.
+//creates a function to populate and add to the object an array with sales by hour.
 function populateRows(storeName) {
   storeName.salesByHour = storeName.aveHourlySales();
 }
 // appendRowsToTable takes the storemane and appends a table row for each store
 function appendRowsToTable(storeName) {
   var arraySum = 0;
-  var rowinfo = storeName.storeName;
+  var rowinfo = '<td>' + storeName.storeName + '</td>';
   for ( var i = 0; i < storeName.salesByHour.length; i++) {
     arraySum = arraySum + storeName.salesByHour[i];
     rowinfo = rowinfo + '<td>' + storeName.salesByHour[i] + '</td>';
@@ -84,7 +85,7 @@ for ( var k = 0; k < 15; k++) {
 console.log(hourlyTotals);
 
 function appendTotalForTable() {
-  var totalRow = 'Totals: ';
+  var totalRow = '<td>' + 'Totals: ' + '</td>';
   for ( var p = 0; p < hourlyTotals.length; p++) {
     totalRow = totalRow + '<td>' + hourlyTotals[p] + '</td>';
   }
