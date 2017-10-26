@@ -5,8 +5,8 @@ body {
 }
 header img {
   float: right;
-  align: right;
-  margin: 40px;
+  margin: 6px 224px 40px 40px;
+  
 }
 label, .storename {
   padding-right: 80px;
@@ -45,20 +45,28 @@ tr, #headrow {
 
 }
 #store_data_input {
-  padding-left: 5px;
-  padding-top: 20px;
+  width: 400px;
+  padding: 20px 40px;
+  border: solid black;
 }
 
 input[type="text"] {
   padding: 7px;
   border: solid 1px #000;
   border-radius: 3px;
-  align: right;
+  float: right;
+
 }
-label[type="text"] {
-  margin-right: 50px;
+label {
+  padding: 7px;
+  float: left;
 }
 button {
   margin-top: 10px;
-  margin-left: 353px;
+  padding: 0px 25px;
+  margin-left: 285px;
+
+}
+fieldset {
+  width: 400px;
 }
