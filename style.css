@@ -1,58 +1,33 @@
 /* app style */
-div {
-  padding-top: 30px;
-  font-size: 30px;
-}
-
 body {
-  background: #795548;
+  background: tan;
   color: black;
 }
-header img {
-  align: right;
+fieldset {
+  font-size: 24px;
 }
- p {
-  padding-top: 30px;
-  font-size: 16px;
+tr, #headderrow {
+  font-size: 24px;
+  padding: 5px 15px;
+  }
+
+td, #headderrow {
+  padding: 10px 15px;
+  font-size: 24px;
 }
+td {
+  width: 30px;
+  
+}
+button {
+  font-size: 20px;
+  margin: 20px 40px;
+  padding: 10px 20px;
+
+}
+
+
 h1 {
-  font-family: serif;
   font-size: 40px;
-  font-weight: bold;
-  padding-bottom: 20px;
-  margin: 25px auto;
-}
-table {
-  background: tan;
-  margin-top: 20px;
-  empty-cells: hide;
 
-}
- td {
-   padding: 10px;
-   width: 10px;
-   border: solid black;
-   text-align: right;
-
- }
-td:hover {
-  background-color: grey;
-}
-
- tr:hover {
-   background-color: white;
- }
-.shell thead {
-  padding: 15px;
-}
-.shell {
-  padding: 20px;
-  background-color: tan;
-  z-index: 9;
-
-}
-.store {
-  font-size: 30px;
-  width: 100%;
-  text-align: left;
 }
