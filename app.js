@@ -82,14 +82,14 @@ function createHeading() {
 function appendRowsToTable(storeName) {
 
   var arraySum = 0;
-  var rowinfo = '<td>' + storeName.storeName + '</td>';
+  var rowinfo = '<td class="store">' + storeName.storeName + '</td>';
   for ( var i = 0; i < storeName.salesByHour.length; i++) {
     arraySum = arraySum + storeName.salesByHour[i];
     rowinfo = rowinfo + '<td>' + storeName.salesByHour[i] + '</td>';
   }
   rowinfo = rowinfo + '<td>' + arraySum + '</td>';
   // console.log('arraysum',arraySum);
-  // console.log('rowinfo',rowinfo);
+  console.log('rowinfo',rowinfo);
   var newRow = '';
   newRow = document.createElement('tr');
   newRow.innerHTML = rowinfo;
