@@ -17,7 +17,7 @@ function Store(name,minCust,maxCust,aveSales) {
 Store.prototype.hourlyCust = function() {
   return getRandomIntInclusive(this.minCust,this.maxCust);
 };
-// creates metho to create array of hourly sales
+// creates method to create array of hourly sales
 Store.prototype.aveHourlySales = function () {
   var salesByHour = [];
   for (var i = 0; i < 15; i++) {
