@@ -90,7 +90,7 @@ function appendRowsToTable(storeName) {
   rowinfo = rowinfo + '<td>' + arraySum + '</td>';
   // console.log('arraysum',arraySum);
   console.log('rowinfo',rowinfo);
-  var newRow = '';
+  var newRow;
   newRow = document.createElement('tr');
   newRow.innerHTML = rowinfo;
   dave.appendChild(newRow);
