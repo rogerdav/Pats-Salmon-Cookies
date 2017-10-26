@@ -1,34 +1,64 @@
 /* app style */
 body {
-  background: tan;
+  background: #795548;
   color: black;
 }
-fieldset {
-  font-size: 24px;
+header img {
+  float: right;
+  align: right;
+  margin: 40px;
 }
-tr, #headderrow {
-  font-size: 24px;
-  padding: 5px 15px;
-  }
-
-td, #headderrow, .store {
-  padding: 10px 15px;
-  font-size: 24px;
+label, .storename {
+  padding-right: 80px;
 }
-td {
-  width: 30px;
-  }
-
-
-button {
-  font-size: 20px;
-  margin: 20px 40px;
-  padding: 10px 20px;
-
+p {
+  padding-top: 30px;
+  font-size: 16px;
 }
-
-
 h1 {
+  font-family: serif;
   font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  margin: 25px auto;
+  text-align: center;
+}
+table {
+  background: tan;
+  margin-top: 20px;
+}
+td, .store {
+   padding: 5px 10px;
+   width: 57px;
+   border: solid black;
 
+ }
+
+.shell {
+  padding: 20px;
+  background-color: tan;
+  z-index: 9;
+}
+tr, #headrow {
+  font-size: 16px;
+  width: 20px;
+
+}
+#store_data_input {
+  padding-left: 5px;
+  padding-top: 20px;
+}
+
+input[type="text"] {
+  padding: 7px;
+  border: solid 1px #000;
+  border-radius: 3px;
+  align: right;
+}
+label[type="text"] {
+  margin-right: 50px;
+}
+button {
+  margin-top: 10px;
+  margin-left: 353px;
 }
