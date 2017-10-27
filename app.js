@@ -11,7 +11,6 @@ function Store(name,minCust,maxCust,aveSales) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.aveSales = aveSales;
-
 }
 // method to create random customer per hour
 Store.prototype.hourlyCust = function() {
@@ -36,7 +35,7 @@ var dave = document.getElementById('content');
 var tableheadrow = document.getElementById('headerrow');
 var storeForm = document.getElementById('store_data_input');
 var storesToUse = [];
-createHeading();
+//createHeading();
 
 
 //generate stores - info taken from form and stored in array called storesToUse.
@@ -52,8 +51,9 @@ function detailsFromForm(event) {
 
 
 
-  console.log('stores to use',storesToUse);
+  //console.log('stores to use',storesToUse);
   dave.innerHTML = '';
+  tableheadrow.innerHTML = '';
   createTabel(storesToUse);
 
 
@@ -94,9 +94,10 @@ function appendRowsToTable(storeName) {
 }
 
 
-function createTabel(AoS) {
-  for (var u = 0; u < AoS.length; u++) {
-    appendRowsToTable(AoS[u]);
+function createTabel(arrayofStores) {
+  createHeading();
+  for (var u = 0; u < arrayofStores.length; u++) {
+    appendRowsToTable(arrayofStores[u]);
   }
   appendTotalForTable(createHourlyTotals());
 }

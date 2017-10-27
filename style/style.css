@@ -57,6 +57,7 @@ td, .store {
   padding: 20px 40px;
   border: solid black;
   margin-top: 10px;
+  margin-left: 30px;
 }
 
 input[type="text"] {
@@ -64,11 +65,13 @@ input[type="text"] {
   border: solid 1px #000;
   border-radius: 3px;
   float: right;
+  background-color: #FFDB06;
 
 }
 label {
   padding: 7px;
   float: left;
+
 
 }
 button {
