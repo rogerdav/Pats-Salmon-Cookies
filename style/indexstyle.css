@@ -47,7 +47,6 @@ div img {
  }
 
 #index_nav {
-
   padding-top: 10px;
   padding-bottom: 10px;
   width: 85%;
@@ -89,8 +88,24 @@ footer p {
   font-size: 18px;
 }
 #about_us div {
-  display: inline-block;
   font-family: sans-serif;
   font-size: 24px;
   padding: 15px 25px;
+}
+#about_us {
+  display: flex;
+}
+#recipes div p {
+  font-family: sans-serif;
+  font-size: 24px;
+  padding: 10px;
+}
+h4 {
+  font-family: sans-serif;
+  font-size: 30px;
+}
+#recipes {
+  display:flex;
+  margin-bottom: 35px;
+
 }
