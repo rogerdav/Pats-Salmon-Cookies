@@ -1,0 +1,75 @@
+/* style sheet */
+
+Body {
+background-color: tan;
+}
+
+header {
+  background-color: tan;
+  font-family: sans-serif;
+  font-size: 40px;
+  text-align: center;
+  padding-bottom: 40px;
+
+
+}
+h1 {
+  font-size: 60px;
+
+}
+header img {
+
+
+}
+nav {
+  border: solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 90%;
+  padding-left: 50px;
+
+
+
+
+}
+ nav div {
+   display: inline-block;
+   padding: 30px 30px;
+   border: solid black;
+   font-size: 21px;
+   font-family: sans-serif;
+   margin-right: 100px;
+
+ }
+
+ div img {
+   height: 254px;
+    width: 464px;
+    border: solid black;
+    padding: 33px;
+ }
+
+ #images {
+   padding: 110px;
+ }
+
+#index_nav {
+  border: solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 76%;
+    padding-left: 311px;
+}
+#store_nav {
+  border: solid black;
+padding-top: 10px;
+padding-bottom: 10px;
+width: 91%;
+padding-left: 112;
+}
+
+footer p {
+  text-align: center;
+  font-size: 18px;
+  position: fixed;
+}
