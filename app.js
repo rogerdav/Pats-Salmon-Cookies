@@ -101,12 +101,10 @@ function createTabel(AoS) {
   appendTotalForTable(createHourlyTotals());
 }
 
-
+// creates an array of totals for each hour for all locations
 function createHourlyTotals() {
   var hourlyTotals = [];
-
   for (var n = 0; n < salesHours.length - 1; n++) {
-
     var tempHourTotal = 0;
     for (var m = 0; m < storesToUse.length; m++) {
       tempHourTotal = tempHourTotal + storesToUse[m].salesByHour[n];
@@ -117,10 +115,13 @@ function createHourlyTotals() {
   return hourlyTotals;
 }
 function appendTotalForTable(hourlyTotals) {
+  var grandTotal = 0;
   var totalRow = '<td class="store">' + 'Totals: ' + '</td>';
   for ( var p = 0; p < hourlyTotals.length; p++) {
     totalRow = totalRow + '<td>' + hourlyTotals[p] + '</td>';
+    grandTotal = grandTotal + hourlyTotals[p];
   }
+  totalRow = totalRow + '<td>' + grandTotal + '</td>';
   var newTotalRow;
   newTotalRow = document.createElement('tr');
   newTotalRow.innerHTML = totalRow;
