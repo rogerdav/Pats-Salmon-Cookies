@@ -12,7 +12,13 @@ header {
 }
 h1 {
   font-size: 60px;
+}
 
+.index_nav a:visited {
+  text-decoration: none;
+}
+.index_nav a:link {
+  text-decoration: none;
 }
 nav {
 
@@ -46,7 +52,7 @@ div img {
    padding: 110px;
  }
 
-#index_nav {
+.index_nav {
   padding-top: 10px;
   padding-bottom: 10px;
   width: 85%;
@@ -73,7 +79,6 @@ h3 {
 
   }
 #store_nav {
-
 padding-top: 10px;
 padding-bottom: 10px;
 width: 85%;
@@ -93,11 +98,12 @@ footer p {
   padding: 15px 25px;
 }
 #about_us {
+  margin-bottom: 130px;
   display: flex;
 }
 #recipes div p {
   font-family: sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   padding: 10px;
 }
 h4 {
@@ -105,7 +111,12 @@ h4 {
   font-size: 30px;
 }
 #recipes {
-  display:flex;
-  margin-bottom: 35px;
-
+  display: inline-flex;
+  margin-bottom: 85px;
+}
+#recipes div {
+  padding: 0 15px;
+}
+#about_us h5 {
+  font-weight: bold;
 }
