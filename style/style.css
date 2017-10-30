@@ -1,0 +1,94 @@
+/* app style */
+body {
+  background: #06A5FF;
+  color: black;
+}
+header img {
+  float: right;
+  margin: 45px 224px 40px 40px;
+}
+header {
+  background-color: #FF2F05;
+  padding: 35px 0px 35px 0px;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+
+label, .storename {
+  padding-right: 80px;
+}
+p {
+  padding-top: 30px;
+  font-size: 16px;
+}
+h1 {
+  font-family: serif;
+  font-size: 40px;
+  font-weight: bold;
+  padding:35px 0px 35 0px;
+
+  text-align: center;
+}
+table {
+  background: tan;
+  margin-top: 20px;
+}
+td, .store {
+   padding: 5px 10px;
+   width: 57px;
+   border: solid black;
+
+ }
+#content {
+  background-color: #FFDB06;
+
+}
+#shell {
+  padding: 20px;
+  background-color: #FFDB06;
+  z-index: 9;
+}
+ #headrow {
+  margin-top: 10px;
+  font-size: 16px;
+  width: 20px;
+  background-color: #FFDB06;
+
+}
+#store_data_input {
+  width: 400px;
+  padding: 20px 40px;
+  border: solid black;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+input[type="text"] {
+  padding: 7px;
+  border: solid 1px #000;
+  border-radius: 3px;
+  float: right;
+  background-color: #FFDB06;
+
+}
+label {
+  padding: 7px;
+  float: left;
+
+
+}
+button {
+  margin-top: 10px;
+  padding: 0px 25px;
+  margin-left: 285px;
+
+}
+fieldset {
+  width: 400px;
+}

@@ -1,19 +1,49 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style\reset.css">
+  <link rel="stylesheet" href="style\style.css">
   <title>Pats Salmon Cookies</title>
 </head>
 <body>
   <header>
     <h1>Pat's Salmon Cookies Internal Sales Page</h1>
+    <img src="images\chinook.jpg" height="150" width="400" />
   </header>
+  <form id="store_data_input">
+    <fieldset >
+      <label for="store_name">Store Name</label>
+      <input type="text" name="store_name" placeholder="Store Name" maxlength="20"required></input>
+    </fieldset>
+    <fieldset >
+      <label>Min Customers per Hour</label>
+      <input type="text" name="min_cust" placeholder="enter min cust per hour" required></input>
+    </fieldset>
+    <fieldset >
+      <label>Max Customers per Hour</label>
+      <input type="text" name="max_cust" placeholder="enter min cust per hour" required></input>
+    </fieldset>
+    <fieldset >
+      <label>Average Sales</label>
+      <input type="text" name="ave_sales" placeholder="ave cookies per sale" required></input>
+    </fieldset>
+    <button id="submit_btn" type="submit">Add Store</button>
+  </form>
+  <table id="shell">
+    <thead>
+      <tr id="headerrow">
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="content">
+      </tr>
+    </tbody>
+  </table>
   <main>
   </main>
   <footer>
   </footer>
-  <script src="app.js"></script>
+ <script src="app.js"></script>
 </body>
 
 </html>
